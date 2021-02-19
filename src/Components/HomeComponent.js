@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Container, Header } from 'semantic-ui-react';
+import axios from 'axios';
 export default class HomeComponent extends Component {
     state = {
         name: '',
@@ -15,6 +16,13 @@ export default class HomeComponent extends Component {
     submitHandler = (e) => {
         e.preventDefault();
         console.log(this.state);
+
+        axios
+            .post('https://sheet.best/api/sheets/9698c46c-fff6-464b-b386-534f1beb790e', this.state)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => console.log(error));
     };
 
     render() {
