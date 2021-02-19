@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Form, Container, Header } from 'semantic-ui-react';
 export default class HomeComponent extends Component {
+    state = {
+        name: '',
+        age: '',
+        salary: '',
+        hobby: '',
+    };
     render() {
         return (
             <Container fluid className='container'>
